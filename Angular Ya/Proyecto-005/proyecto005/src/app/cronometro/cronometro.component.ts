@@ -1,5 +1,7 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
-import * as EventEmitter from 'events';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
+// Con esto falla hay que añadirlo ariba
+// import * as EventEmitter from 'events';
 
 @Component({
   selector: 'app-cronometro',
@@ -7,18 +9,21 @@ import * as EventEmitter from 'events';
   styleUrls: ['./cronometro.component.css']
 })
 export class CronometroComponent implements OnInit {
-  segundo:number=0;
-  @Input() inicio:string;
-  @Output() multiplo10:EventEmitter = new EventEmitter();
+  segundo = 0;
+  @Input() inicio;
+  @Output() multiplo10 = new EventEmitter();
+
   constructor() { }
 
-  ngOnInit() {
-    this.segundo = parseInt(this.inicio);
+  ngOnInit(): void {
+    this.segundo = this.inicio;
     setInterval(() => {
       this.segundo++;
-      if (this.segundo % 10 == 0)
+      if(this.segundo % 10 == 0){
         this.multiplo10.emit(this.segundo.toString());
-    }, 1000);
+      }
+    },1000);
+  
   }
 
 }
