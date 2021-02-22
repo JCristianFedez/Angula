@@ -1,2 +1,5 @@
 Por hacer: 
 AngularYa 19 - Pipes > Proyecto14
+
+Subir al servidor Ruix
+Angular Ya (13-20)
