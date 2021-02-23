@@ -1,0 +1,28 @@
+<h1>Pipelines por defecto</h1>
+<p>Nombre del cliente: {{ nombre }}</p>
+<p>Nombre del cliente en mayusculas: {{ nombre | uppercase }}</p>
+<p>Nombre del cliente en minusculas: {{ nombre | lowercase }}</p>
+<p>El saldo es: {{ saldo | currency:"€" }}</p>
+<p>Dias laborables: {{ dias | slice:1:6 }}</p>
+<p>{{ articulos | json }}</p>
+<p>Fecha actual: {{ fechaActual | date:"d/M/y" }}</p>
+
+<h1>Pipelines personalizadas</h1>
+<h3>Números en castellano</h3>
+<ul>
+  <li *ngFor="let valor of vector">
+    {{valor | letras}}
+  </li>
+</ul>
+<h3>Números en inglés</h3>
+<ul>
+  <li *ngFor="let valor of vector">
+    {{valor | letras:'ingles'}}
+  </li>
+</ul>
+<h3>Números en portugués</h3>
+<ul>
+  <li *ngFor="let valor of vector">
+    {{valor | letras:'portugues'}}
+  </li>
+</ul>
