@@ -1,0 +1,22 @@
+<div>
+  <h1>Listado de Articulos</h1>
+  <table border="1" *ngIf="hayRegistros(); else sinarticulos">
+    <thead>
+      <tr>
+        <td>Codigo</td>
+        <td>Descripcion</td>
+        <td>Precio</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let art of articulos">
+        <td>{{art.codigo}}</td>
+        <td>{{art.descripcion}}</td>
+        <td>{{art.precio}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #sinarticulos>
+    <p>No hay articulos.</p>
+  </ng-template>
+</div>

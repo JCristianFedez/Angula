@@ -5,9 +5,11 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item routerLink="/dado20229400">Dado</a>
+      <a mat-list-item href="/juegodados20220400">Juego dados</a>
+      <a mat-list-item href="/contadortemporizador20229400">Temporizador</a>
+      <a mat-list-item href="/listado20229400">Listado articulos</a>
+      <a mat-list-item href="/listadomaterial20229400">Listado articulos Material</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -23,5 +25,7 @@
       <span>examenangularcristianfernandez</span>
     </mat-toolbar>
     <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
